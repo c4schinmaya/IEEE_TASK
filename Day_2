@@ -1,0 +1,143 @@
+1. What is the difference between em and rem units in CSS ?
+
+       ans-:
+
+                i) em -: Relative to the parent element's font size: The em unit is based on the font size of the element's parent. For example, if the parent element has a font size of 16px, then 1em equals 16px.
+
+                ii) rem -: Relative to the root element's font size: The rem unit stands for "root em" and is based on the font size of the root element ( element). This means 1rem is always equal to the font size of the root element, regardless of where it's used in the document.
+
+2. Explain the concept of closures in JavaScript. Provide an example where a closure might be useful.
+
+       ans-:
+
+           Closures in JavaScript : 
+                  A closure in JavaScript is a function that "remembers" the environment in which it was created. In other words, a closure allows a function to access variables from an outer function even after that outer function has completed execution.
+
+                  This happens because, when a function is declared, it captures references to any variables in its lexical scope. Even when the outer function has returned, these references persist, allowing the inner function (closure) to access those variables.
+
+              CODE : 
+
+function createCounter() {
+    let count = 0;
+    return function() {
+        count++;  
+        console.log(count);
+    }
+}
+
+const counter = createCounter(); 
+
+counter(); 
+counter();  
+counter(); 
+
+3. What are semantic HTML tags?
+
+       ans-:
+              
+             Semantic HTML tags are HTML elements that provide meaning to the content they enclose, beyond just how they appear on the page. 
+             These tags describe the role and structure of the content, making it easier for both developers and browsers   
+                      (including search engines) to understand the webpage's layout and content.
+  
+                  example : <header> , <article> , <section> , <footer>
+
+
+4.How would you create a responsive design without using a CSS framework like Bootstrap?
+
+     ans-: 
+            
+               Creating a responsive design without using a CSS framework like Bootstrap involves writing custom CSS that adapts the layout to different screen sizes.
+             This is typically done using CSS media queries, flexible grids, and responsive units
+
+HTML :
+             <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Responsive Page</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="card">Card 1</div>
+            <div class="card">Card 2</div>
+            <div class="card">Card 3</div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Responsive Page</p>
+    </footer>
+</body>
+</html>
+             
+CSS: 
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Main Content */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.card {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 1rem;
+    flex: 1 1 300px; /* Flex-grow and flex-shrink with a base width */
+    text-align: center;
+}
+
+/* Footer Styles */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    .card {
+        flex: 1 1 100%; /* Cards stack on small screens */
+        margin: 0.5rem 0;
+    }
+}
+
+
+5. What is the purpose of the srcset attribute in the <img> tag ?
+ 
+   ans-:
+          The srcset attribute in the <img> tag allows you to specify multiple image sources for different screen resolutions and sizes.
+          This helps browsers choose the most appropriate image based on the device's screen size, resolution, and pixel density
+
+
+
+
