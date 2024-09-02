@@ -1,0 +1,183 @@
+//1. Perfect Number Checker:
+
+#include <iostream>
+using namespace std;
+
+class PerfectNumber {
+private:
+    int num;
+
+public:
+
+    PerfectNumber(int n) {
+        num = n;
+        checkPerfect();
+    }
+
+    void checkPerfect() {
+        int sum = 0;
+        
+  
+        for (int i = 1; i <= num / 2; i++) {
+            if (num % i == 0) {
+                sum += i;
+            }
+        }
+
+        if (sum == num) {
+            cout << num << " is a perfect number." << endl;
+        } else {
+            cout << num << " is not a perfect number." << endl;
+        }
+    }
+};
+
+int main() {
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+
+    PerfectNumber pn(n);
+
+    return 0;
+}
+
+
+ // 2. Write a function that checks if a given integer is a palindrome.
+#include<iostream>
+using namespace std;
+class Pallindrom{
+   int num;
+   public:
+   void display();
+   void getdata(){
+    cout<<"enter the number : ";
+    cin>>num;
+   }
+};
+   
+   void Pallindrom::display(){
+    int ans=0,rem;
+    int n=num;
+    while(num>0){
+        rem=num%10;
+        ans=ans*10+rem;
+        num=num/10;
+    }
+  if(ans==n){
+    cout<<"It is pallindrom number";
+  }
+  else{
+    cout<<"It is not a pallindrom number";
+  }
+   }
+
+int main(){
+    Pallindrom ob;
+    ob.getdata();
+    ob.display();
+
+
+    return 0;
+}
+
+
+//3. Count Vowels: Write a function that counts the number of vowels (a, e, i, o, u) in a given string.
+#include <iostream>
+#include <string>
+using namespace std;
+
+class VowelCounter {
+private:
+    string s;
+    int Count;
+
+public:
+    VowelCounter(string s) {
+        s = s;
+        Count = 0;
+        countVowels();
+    }
+
+    void countVowels() {
+        for (char ch : s) {
+            ch = tolower(ch);
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                Count++;
+            }
+        }
+        cout << "Number of vowels in the string \"" << s << "\" is: " << Count << endl;
+    }
+};
+
+int main() {
+    string input;
+    cout << "Enter a string: ";
+    getline(cin, input);
+
+    VowelCounter vc(input);
+
+    return 0;
+}
+
+
+// 4. Write a function that reverses a given list of integers.
+#include <iostream>
+using namespace std;
+
+class ReverseList {
+public:
+
+    ReverseList(int arr[], int size) {
+        for (int i = size - 1; i >= 0; --i) {
+            cout << arr[i] << " ";
+        }
+        cout << endl;
+    }
+};
+
+int main() {
+    int n;
+    cout<<"enter the size of array : ";
+    cin>>n;
+    int List[n];
+    cout<<"Enter the elements in array : ";
+    for(int i=0;i<n;i++){
+        cin>>List[i];
+    }
+
+    int size = sizeof(List) / sizeof(List[0]);
+    ReverseList revList(List, size);
+    return 0;
+}
+
+// 5. Factorial of a Number:  Write a function that calculates the factorial of a non-negative integer.
+#include <iostream>
+using namespace std;
+
+class Factorial {
+public:
+    Factorial(int a) {
+        int fact = 1;
+        
+        for (int i = 1; i <= a; ++i) {
+            fact =fact*i;
+        }
+        
+        cout << "Factorial of " << a << " is: " << fact << endl;
+    }
+};
+
+int main() {
+    int n;
+    cout << "Enter a non-negative integer: ";
+    cin >> n;
+
+    if (n<0) {
+        cout << "Factorial is not defined for negative integers." << endl;
+    } else {
+        Factorial ob(n);
+    }
+
+    return 0;
+}
