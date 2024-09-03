@@ -1,0 +1,133 @@
+ // 1. Write a function that checks if a given number is an Armstrong number. ex :  (153 = 1³ + 5³ + 3³)
+ #include<iostream>
+ #include<math.h>
+ #include<conio.h>
+using namespace std;
+void check(int n){
+    int P=0;
+    int temp=n;
+    int ext=n;
+    while(n>0){
+     n=n/10;
+     P=P+1;;
+    }
+    int rem,sum=0;
+    while(n>0){
+        rem=ext%10;
+        sum=sum+pow(rem,P);
+        n=n/10;
+    }
+   if(temp!=sum){
+    cout<<"true";
+   }
+     else 
+  cout<<"false";
+}
+int main(){
+    int num;
+    cout<<"Enter the value of num:";
+    cin>>num;
+   check(num);
+return 0;
+}
+
+ // 2. Write a function that checks if two given strings are anagrams. Two strings are anagrams if they contain the same characters in the same frequency. EX- "listen", "silent"
+
+#include <iostream>
+#include <algorithm>
+#include <string>
+using namespace std;
+bool check(const string& str1, const string& str2) {
+    if (str1.length() != str2.length()) {
+        return false;
+    }
+    string sorted_str1 = str1;
+    string sorted_str2 = str2;
+    sort(sorted_str1.begin(), sorted_str1.end());
+    sort(sorted_str2.begin(), sorted_str2.end());
+    return sorted_str1 == sorted_str2;
+}
+int main() {
+    string str1, str2;
+    cout << "Enter the first string: ";
+    cin >> str1;
+    cout << "Enter the second string: ";
+    cin >> str2;
+    if (check(str1, str2)) {
+        cout << "True" << endl;
+    } else {
+        cout << "False" << endl;
+    }
+    return 0;
+}
+
+
+ // 3.Sum of Even Numbers in a List: Write a function that calculates the sum of all even numbers in a given list of integers.
+#include<iostream>
+using namespace std;
+int check(int n){
+    int arr[n],sum=0;
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    for(int i=0;i<n;i++){
+        if(arr[i]%2==0){
+            sum=sum+arr[i];
+        }
+    }
+    return sum;
+}
+int main(){
+    int arr[1000];
+    int num;
+    cout<<"enter the size of array : ";
+    cin>>num;
+    cout<<check(num);
+
+    return 0;
+}
+
+
+// 4.Calculate the GCD (Greatest Common Divisor) of Two Numbers: Write a function that calculates the GCD of two non-negative integers.
+
+#include<iostream>
+using namespace std;
+int check(int A,int B){
+    int n,ans ;
+    n=min(A,B);
+    for(int i=1;i<=n;i++){
+        if(A%i==0&&B%i==0){
+            ans=i;
+        }
+    }
+    return ans;
+}
+
+
+int main(){
+    int a,b;
+    cout<<"Entre two numbers : "<<endl;
+    cin>>a>>b;
+    cout<<check(a,b);
+
+
+    return 0;
+}
+
+
+ // 5.Convert Celsius to Fahrenheit: Write a function that converts a temperature from Celsius to Fahrenheit.
+
+#include<iostream>
+using namespace std;    
+float check(float C){
+    float F;
+    F=(1.8*C)+32;
+    return F;
+ }
+int main(){
+    float Cel;
+    cout<<"Entre temperatue in celsius :";
+    cin>>Cel;
+    cout<<"F="<<check(Cel);
+    return 0;
+}
